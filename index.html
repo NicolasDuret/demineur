@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>le demineur de Nicolas</title>
+    <title>Demo 1 - Building the board</title></head>
+<body>
+    <script language="javascript">
+        var str_initValue = "<b>   ?   </b>"; // valeur initaile de chaque cellules
+        var int_rows=12; // nombre de lignes à créer
+        var int_columns=20; // nombre de lignes à créer
+        function buildBoard()
+        {
+            var int_cellNo=0; // nombre de cellules créée
+            document.write("<table border='2'>"); // ajout du tableau
+
+            // On dit que pour chaques lignes on a besoin de:
+            for (i=0;i<int_rows;i++)
+            {
+                document.write("<tr align='center'>"); // on affiche la ligne
+
+                // Pour chque colonnes on a:
+                for (j=0;j<int_columns;j++)
+                {
+                    // Afficher les lignes avec les div et on leur laisse une référence pour l'utiliser plus tard.
+                    document.write("<td width='30' id='cell" + int_cellNo + "'>");
+                    document.write("<div name='r" + (i+1) + "c" + (j+1) + "' id='r" + (i+1) + "c" + (j+1) + "'>" + str_initValue + "</div>")
+                    document.write("</td>");
+                    // incrementer les cellules de référence
+                    int_cellNo=int_cellNo+1;
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+    </script>
+
+
+<script language="javascript">
+    buildBoard();
+</script>
+</body>
+</html>
